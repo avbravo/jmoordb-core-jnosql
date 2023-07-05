@@ -5,7 +5,6 @@
 package com.jmoordb.core.repository;
 
 import com.jmoordb.core.annotation.repository.CoreException;
-import com.jmoordb.core.annotation.repository.Count;
 import com.jmoordb.core.annotation.repository.DeleteBy;
 import com.jmoordb.core.annotation.repository.Find;
 import com.jmoordb.core.annotation.repository.Save;
@@ -16,6 +15,7 @@ import com.jmoordb.core.model.Sorted;
 import com.jmoordb.core.processor.model.JmoordbException;
 import java.util.List;
 import java.util.Optional;
+import org.bson.conversions.Bson;
 
 /**
  *
@@ -46,7 +46,11 @@ public interface CrudRepository<T, PK> {
     
     @DeleteBy
     public Long deleteByPk(PK id);
-
+@DeleteMany
+    public Long deleteMany(Search search);
+    
+    @UpdateMany
+    public Long updateMany(Bson query, Bson update);
 @CoreException()
 public JmoordbException getJmoordbException();
 }
