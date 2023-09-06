@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.avbravo.jmoordb.core.processor</groupId>
     <artifactId>jmoordb-core-jnosql</artifactId>
-    <version>1.0.0.b-1</version>
+    <version>1.0.0.b-2</version>
     <packaging>jar</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -26,7 +26,7 @@
            Jakarta EE / Java EE
        -->
        
-         <dependency>
+<!--         <dependency>
             <groupId>org.eclipse.jnosql.artemis</groupId>
             <artifactId>artemis-document</artifactId>
             <version>${jakarta.nosql.version}</version>
@@ -35,19 +35,26 @@
             <groupId>org.eclipse.jnosql.diana</groupId>
             <artifactId>mongodb-driver</artifactId>
             <version>${jakarta.nosql.version}</version>
-        </dependency>
+        </dependency>-->
        
+        <dependency>
+            <groupId>org.eclipse.jnosql.databases</groupId>
+            <artifactId>jnosql-mongodb</artifactId>
+            <version>1.0.1</version>
+            
+            
+        </dependency>
         
         <!--
         jersey
         -->
         
-        <dependency>
+<!--       <dependency>
             <groupId>org.glassfish.jersey.core</groupId>
             <artifactId>jersey-common</artifactId>
             <version>3.1.0-M3</version>
             <type>jar</type>
-        </dependency>
+        </dependency>-->
        
        
        

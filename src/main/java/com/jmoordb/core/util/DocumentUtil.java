@@ -7,7 +7,7 @@ package com.jmoordb.core.util;
 import com.jmoordb.core.model.Pagination;
 import com.jmoordb.core.model.Search;
 import com.jmoordb.core.model.Sorted;
-import static com.jmoordb.core.util.JmoordbCoreUtil.setHourToDate;
+import static com.jmoordb.core.util.JmoordbCoreDateUtil.setHourToDate;
 import static com.mongodb.MongoClientSettings.getDefaultCodecRegistry;
 import com.mongodb.client.model.Filters;
 import java.util.Date;
@@ -15,7 +15,7 @@ import java.util.HashMap;
 import org.bson.BsonDocument;
 import org.bson.Document;
 import org.bson.conversions.Bson;
-import org.glassfish.jersey.uri.UriComponent;
+
 
 /**
  *
@@ -240,21 +240,9 @@ return filter;
     }
     // </editor-fold>
 
-    // <editor-fold defaultstate="collapsed" desc="String encodeJson(String query)" >
-
-    public static String encodeJson(String query) {
-        try {
-
-            return UriComponent.encode(query, UriComponent.Type.QUERY_PARAM_SPACE_ENCODED);
-        } catch (Exception e) {
-            MessagesUtil.error(MessagesUtil.nameOfClassAndMethod() + "error: " + e.getLocalizedMessage());
-        }
-        return query;
-
-    }
-    // </editor-fold>
+  
     
-        // <editor-fold defaultstate="collapsed" desc="Search convertForLookup( String filter, String sort, Integer page,  Integer size)">
+    // <editor-fold defaultstate="collapsed" desc="Search convertForLookup( String filter, String sort, Integer page,  Integer size)">
     /**
      * Convierte a un Search para ser usado en un lookup
      * @param filter
